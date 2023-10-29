@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filling Egg Cartons Challenge</title>
+
+    <style>
+
+        body {
+            background-color: #333;
+            margin: 30px;
+            font-size: 20px;
+            font-family: sans-serif;
+        }
+
+        .container {
+            background-color: #eee;
+            width: 950px;
+            font-size: 1.25em;
+            border: 2px solid #999;
+            padding: 30px;
+            color: #333;
+            margin: 0 auto;
+            min-height: 400px;
+        }
+
+        strong {
+            font-family: monospace;
+        }
+
+        h1, h2, h3, h4, p {
+            margin: 5px;
+            padding: 5px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>JS ALGO CHALLENGE:</h1>
+        <h1>Filling Egg Cartons</h1>
+
+        <p>Write a JavaScript program that fills egg cartons from any number of eggs.</p>
+
+        <ul>
+            <li>Write a function called <strong>fillEggCartons(numEggs)</strong></li>
+            <li><strong>numEggs</strong>, an integer, is the total number of eggs.</li>
+            <li>The function starts by assigning a price, in cents, to each egg.</li>
+            <li>There are 6 possible prices: <strong>25, 30, 35, 40, 45, 50</strong></li>
+            <li>Prices should be as equally distributed as possible, </li>
+            <li>so, if there are 54 eggs, there should be nine eggs of each price.</li>
+            <li>The function then proceeds to make cartons of a dozen eggs each.</li>
+            <li>So, if there are 54 eggs passed in, the function makes four cartons.</li>
+            <li>For 54 eggs, there would be 6 leftover eggs, which you may ignore.</li>
+            <li>Each full carton should contain <em>exactly</em> two 25-cent eggs</li> 
+            <li>Each full carton should contain <em>exactly</em> two 50-cent eggs.</li>
+            <li>The carton's other eight egg prices are be assigned at <strong>random</strong>.</li>
+            <li>Once all the cartons are full, calculate the price of each carton.</li>
+            <li>Carton prices will differ, due to the eight random eggs per carton.</li>
+            <li>Each carton should be an object, having the following two <strong>keys</strong>:</li>
+            <li><strong>"eggs":</strong> the value of which is a 12-item array of prices: <br>
+                <strong>[50, 50, 25, 25, 40, 35, 45, 50, 30, 35, 45, 25]</strong>
+            <li><strong>"price":</strong> the sum of the carton array: Example: <strong>455</strong></li>
+            <li>So, the whole object would be:<br><strong>
+                { eggs: [50, 50, 25, 25, 40, 35, 45, 50, 30, 35, 45, 25], price: 455 }</strong></li>
+            <li>The function should return an array of these carton objects.</li>
+            <li>So if 54 eggs are passed in, the function returns an array of four objects.</li>
+            <br>
+            <li><strong>BONUS 1: Improve Price Parity:</strong></li>
+            <li>Reduce the difference between the min and max priced cartons:</li>
+            <li>Swap a 50-cent egg from the most expensive carton for a 25-cent egg from the cheapest carton.</li>
+            <li>After the swap, don't forget to recalculate the prices of the two affected cartons.</li></strong></li>
+            <br>
+            <li><strong>BONUS 2: Sort Array by Price:</strong></li>
+            <li>Return the array of cartons, <strong></strong>sorted by price, ascending</strong> order.</li>
+            <li>Provide the option of sorting prices in <strong>descending</strong> order.</li>
+            <li>A 2nd <strong>parameter</strong> will be needed for specifying ascending or descending sort.</li>
+            <li>The refactored function might start like this: 
+                <br><strong>fillEggCartons(numEggs, sortByPrice="asc")</strong></li>
+        </ul>
+      
+    </div>
+
+    <script>
+
+       function fillEggCartons(numEggs) {
+            const eggCartons = [];
+            // YOUR CODE
+            return eggCartons;
+       }
+
+       console.log(fillEggCartons(36));
+       console.log(fillEggCartons(52));
+       console.log(fillEggCartons(152));
+
+    </script>
+    
+</body>
+</html>
