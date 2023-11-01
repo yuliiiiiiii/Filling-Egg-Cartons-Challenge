@@ -25,38 +25,25 @@ function fillEggCartons(numEggs) {
       objArr.push(acc);
     }
     
-    // return objArr.sort((a,b) => a.price - b.price);
-// [
-// {eggs: Array(12), price: 430},
-// {eggs: Array(12), price: 430},
-// {eggs: Array(12), price: 435},
-// {eggs: Array(12), price: 445},
-// {eggs: Array(12), price: 450},
-// {eggs: Array(12), price: 455}, 
-// {eggs: Array(12), price: 460}, 
-// {eggs: Array(12), price: 460},
-// {eggs: Array(12), price: 470},
-// {eggs: Array(12), price: 480},
-// {eggs: Array(12), price: 500},
-// {eggs: Array(12), price: 505}
-// ]
-     let sortedObjArr = objArr.sort((a,b) => a.price - b.price);
+    let sortedObjArr = objArr.sort((a,b) => a.price - b.price);
 
-     let cheapestArray = sortedObjArr[0].eggs;
-     cheapestArray.includes(25) ? cheapestArray.splice(cheapestArray.indexOf(25), 1, 51) : console.log("No 25-cent egg in the cheapest carton") 
-     sortedObjArr[0].eggs = cheapestArray;
+    let cheapestArray = sortedObjArr[0].eggs;
+    cheapestArray.includes(25) ? cheapestArray.splice(cheapestArray.indexOf(25), 1, 51) : console.log("No 25-cent egg in the cheapest carton") 
+    sortedObjArr[0].eggs = cheapestArray;
+    sortedObjArr[0].price = cheapestArray.reduce((sum, curr) => sum+=curr);
      
      
-     let expensiveArray = sortedObjArr[(sortedObjArr.length - 1)].eggs;
-     expensiveArray.includes(50) ? expensiveArray.splice(expensiveArray.indexOf(50),1,24) : console.log("No 50-cent egg in the most expensive carton") 
-     sortedObjArr[(sortedObjArr.length - 1)].eggs = expensiveArray;
+    let expensiveArray = sortedObjArr[(sortedObjArr.length - 1)].eggs;
+    expensiveArray.includes(50) ? expensiveArray.splice(expensiveArray.indexOf(50),1,24) : console.log("No 50-cent egg in the most expensive carton") 
+    sortedObjArr[(sortedObjArr.length - 1)].eggs = expensiveArray;
+    sortedObjArr[(sortedObjArr.length - 1)].price = expensiveArray.reduce((sum, curr) => sum+=curr);
 
-     
+  return sortedObjArr.sort((a,b) => a.price - b.price);
 }
 
 // console.log(fillEggCartons(36));
-// console.log(fillEggCartons(52));
- console.log(fillEggCartons(152));
+console.log(fillEggCartons(52));
+//  console.log(fillEggCartons(152));
 
 
 
