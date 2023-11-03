@@ -29,7 +29,7 @@ function fillEggCartons(numEggs) {
 
 //  return objArr.sort((a, b) => a.price > b.price ? 1 : -1);
 
-  let sortedObjArr = objArr.sort((a, b) => a.price - b.price);
+  let sortedObjArr = objArr.sort((a, b) => a.price > b.price ? 1 : -1);
 
   let cheapestArray = sortedObjArr[0].eggs;
   cheapestArray.includes(25) ? cheapestArray.splice(cheapestArray.indexOf(25), 1, 51) : console.log("No 25-cent egg in the cheapest carton");
