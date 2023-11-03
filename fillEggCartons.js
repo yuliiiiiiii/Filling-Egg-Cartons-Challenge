@@ -17,13 +17,17 @@ function fillEggCartons(numEggs) {
   }
 
   const fullCartons = Math.floor(numEggs / 12);
-  for (let i = 0; i < fullCartons; i++) {
+  for (let j = 0; j < fullCartons; j++) {
     let acc = { eggs: [], price: 0 };
+    // acc.eggs = allEggsArray.slice(i * 12, (i + 1) * 12);
 
-    acc.eggs = allEggsArray.slice(i * 12, (i + 1) * 12);
+    acc.eggs = allEggsArray.splice(0, 12);
+    //get the first 12 items from allEggsArray and add them to the new array, and remove the first 12 items from the allEggsArray
     acc.price = acc.eggs.reduce((sum, curr) => sum += curr);
     objArr.push(acc);
   }
+
+//  return objArr.sort((a, b) => a.price > b.price ? 1 : -1);
 
   let sortedObjArr = objArr.sort((a, b) => a.price - b.price);
 
