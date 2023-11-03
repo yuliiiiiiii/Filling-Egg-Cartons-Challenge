@@ -31,18 +31,20 @@ function fillEggCartons(numEggs) {
 
   let sortedObjArr = objArr.sort((a, b) => a.price > b.price ? 1 : -1);
 
-  let cheapestArray = sortedObjArr[0].eggs;
-  cheapestArray.includes(25) ? cheapestArray.splice(cheapestArray.indexOf(25), 1, 51) : console.log("No 25-cent egg in the cheapest carton");
-  sortedObjArr[0].eggs = cheapestArray;
-  sortedObjArr[0].price = cheapestArray.reduce((sum, curr) => sum += curr);
+  // let cheapestArray = sortedObjArr[0].eggs;
+  // cheapestArray.includes(25) ? cheapestArray.splice(cheapestArray.indexOf(25), 1, 51) : console.log("No 25-cent egg in the cheapest carton");
+  // sortedObjArr[0].eggs = cheapestArray;
+  sortedObjArr[0].eggs[indexOf(25)] = 51;
+  sortedObjArr[0].price = sortedObjArr[0].eggs.reduce((sum, curr) => sum += curr);
 
 
-  let expensiveArray = sortedObjArr[(sortedObjArr.length - 1)].eggs;
-  expensiveArray.includes(50) ? expensiveArray.splice(expensiveArray.indexOf(50), 1, 24) : console.log("No 50-cent egg in the most expensive carton");
-  sortedObjArr[(sortedObjArr.length - 1)].eggs = expensiveArray;
-  sortedObjArr[(sortedObjArr.length - 1)].price = expensiveArray.reduce((sum, curr) => sum += curr);
+  // let expensiveArray = sortedObjArr[(sortedObjArr.length - 1)].eggs;
+  // expensiveArray.includes(50) ? expensiveArray.splice(expensiveArray.indexOf(50), 1, 24) : console.log("No 50-cent egg in the most expensive carton");
+  // sortedObjArr[(sortedObjArr.length - 1)].eggs = expensiveArray;
+  sortedObjArr[(sortedObjArr.length - 1)].eggs[indexOf(50)] = 24;
+  sortedObjArr[(sortedObjArr.length - 1)].price = sortedObjArr[(sortedObjArr.length - 1)].eggs.reduce((sum, curr) => sum += curr);
 
-  return sortedObjArr.sort((a, b) => a.price - b.price);
+  return sortedObjArr.sort((a, b) =>  a.price > b.price ? 1 : -1);
 }
 
 // console.log(fillEggCartons(36));
