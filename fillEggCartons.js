@@ -22,7 +22,7 @@ class EggCarton {
 
     let allEggsArray = [];
     for (let i = 0; i < numEggs; i++) {
-    allEggsArray.push(random());
+    allEggsArray.push(this.random());
     }
 
     const fullCartons = Math.floor(numEggs / 12);
