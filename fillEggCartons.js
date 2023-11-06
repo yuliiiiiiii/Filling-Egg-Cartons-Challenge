@@ -1,36 +1,47 @@
-const random = function() {
+class EggCarton {
+
+  // constructor function runs automatically whenever an obj is instantiated from the Class
+  constructor(numEggs) {
+    return;
+  }
+
+  random() {
   // const prices = [25, 30, 35, 40, 45, 50];
   // const index = Math.floor(Math.random() * prices.length);
   // return prices[index];
   const price = Math.floor(Math.random() * 6) * 5 + 25;
   return price;
-};
+  };
 
-function fillEggCartons(numEggs) {
-  const objArr = [];
+  fillEggCartons(numEggs, sortByPrice=false, priceParity=false) {
+    const objArr = [];
   // YOUR CODE
-  if (numEggs < 12) {
+    if (numEggs < 12) {
     return "Each carton must hold 12 eggs";
-  }
+    }
 
-  let allEggsArray = [];
-  for (let i = 0; i < numEggs; i++) {
+    let allEggsArray = [];
+    for (let i = 0; i < numEggs; i++) {
     allEggsArray.push(random());
-  }
+    }
 
-  const fullCartons = Math.floor(numEggs / 12);
-  for (let j = 0; j < fullCartons; j++) {
-    let acc = { eggs: [], price: 0 };
+    const fullCartons = Math.floor(numEggs / 12);
+    for (let j = 0; j < fullCartons; j++) {
+      let acc = { eggs: [], price: 0 };
     // acc.eggs = allEggsArray.slice(i * 12, (i + 1) * 12);
 
-    acc.eggs = allEggsArray.splice(0, 12);
+      acc.eggs = allEggsArray.splice(0, 12);
     //get the first 12 items from allEggsArray and add them to the new array, and remove the first 12 items from the allEggsArray
-    acc.price = acc.eggs.reduce((sum, curr) => sum += curr);
-    objArr.push(acc);
-  }
+      acc.price = acc.eggs.reduce((sum, curr) => sum += curr);
+      objArr.push(acc);
+    }
 
 //  return objArr.sort((a, b) => a.price > b.price ? 1 : -1);
+  if(sortByPrice) objArr.sort((a, b) => a.price > b.price ? 1 : -1);
 
+  if(priceParity) {
+    
+  }
   let sortedObjArr = objArr.sort((a, b) => a.price > b.price ? 1 : -1);
 
   // let cheapestArray = sortedObjArr[0].eggs;
@@ -49,10 +60,12 @@ function fillEggCartons(numEggs) {
   sortedObjArr[(sortedObjArr.length - 1)].price = sortedObjArr[(sortedObjArr.length - 1)].eggs.reduce((sum, curr) => sum += curr);
 
   return sortedObjArr.sort((a, b) =>  a.price > b.price ? 1 : -1);
+  }
+
 }
 
 // console.log(fillEggCartons(36));
-console.log(fillEggCartons(52));
+// console.log(fillEggCartons(52));
 //  console.log(fillEggCartons(152));
 
 
