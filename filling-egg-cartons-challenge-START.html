@@ -70,6 +70,13 @@
     </div>
 
     <script src="fillEggCartons.js"></script>
+    <script>
+        // instantiate instance of EggCarton Class
+        const ec = new EggCarton();
+        console.log(ec.fillEggCartons(52)); // don't sort by price
+        console.log(ec.fillEggCartons(52, true)); // sort by price
+        console.log(ec.fillEggCartons(52, true, true)); // sort and improve price parity
+    </script>
     
 </body>
 </html>
