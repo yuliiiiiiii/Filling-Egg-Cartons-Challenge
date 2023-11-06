@@ -1,7 +1,9 @@
 const random = function() {
-  const prices = [25, 30, 35, 40, 45, 50];
-  const index = Math.floor(Math.random() * prices.length);
-  return prices[index];
+  // const prices = [25, 30, 35, 40, 45, 50];
+  // const index = Math.floor(Math.random() * prices.length);
+  // return prices[index];
+  const price = Math.floor(Math.random() * 6) * 5 + 25;
+  return price;
 };
 
 function fillEggCartons(numEggs) {
